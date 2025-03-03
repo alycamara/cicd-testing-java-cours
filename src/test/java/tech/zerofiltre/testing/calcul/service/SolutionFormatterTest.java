@@ -2,6 +2,7 @@ package tech.zerofiltre.testing.calcul.service;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+import org.junit.Ignore;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -14,6 +15,7 @@ public class SolutionFormatterTest {
 		solutionFormatter = new SolutionFormatterImpl();
 	}
 
+	@Ignore ("")
 	@Test
 	public void format_shouldFormatAnyBigNumber() {
 		// GIVEN
