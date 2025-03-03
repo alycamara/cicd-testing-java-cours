@@ -1,23 +1,20 @@
 package tech.zerofiltre.testing.calcul.service;
-
 import static org.assertj.core.api.Assertions.assertThat;
 
-import org.junit.Ignore;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-public class SolutionFormatterTest {
+class SolutionFormatterTest {
 
 	private SolutionFormatter solutionFormatter;
 
 	@BeforeEach
-	public void initFormatter() {
+	void initFormatter() {
 		solutionFormatter = new SolutionFormatterImpl();
 	}
 
-	//@Ignore ("")
-	//@Test
-	public void format_shouldFormatAnyBigNumber() {
+	@Test
+	void format_shouldFormatAnyBigNumber() {
 		// GIVEN
 		final int number = 1234567890;
 
@@ -25,7 +22,7 @@ public class SolutionFormatterTest {
 		final String result = solutionFormatter.format(number);
 
 		// THEN
-		// assertThat(result).isEqualTo("1 234 567 890");
+		assertThat(result).isEqualTo("1 234 567 890");
 	}
 
 }
