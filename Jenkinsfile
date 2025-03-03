@@ -83,7 +83,7 @@ def pushToImage(containerName, tag, dockerUser, dockerPassword) {
 }
 
 def runApp(containerName, tag, dockerHubUser, httpPort, envName) {
-    sh "docker pull $dockerHubUser/$containerName"
+    sh "docker pull $dockerHubUser/$containerName:$tag"
     sh "docker run --rm --env SPRING_ACTIVE_PROFILES=$envName -d -p $httpPort:$httpPort --name $containerName $dockerHubUser/$containerName:$tag"
     echo "Application started on port: ${httpPort} (http)"
 }
@@ -99,14 +99,14 @@ String getEnvName(String branchName) {
     if (branchName == 'master') {
         return 'prod'
     }
-    return (branchName == 'develop') ? 'dev' : 'uat'
+    return (branchName == 'develop') ? 'uat' : 'dev'
 }
 
 String getHTTPPort(String branchName) {
     if (branchName == 'master') {
         return '9003'
     }
-    return (branchName == 'develop') ? '9001' : '9002'
+    return (branchName == 'develop') ? '9002' : '9001'
 }
 
 String getTag(String buildNumber, String branchName) {
