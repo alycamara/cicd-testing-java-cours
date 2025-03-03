@@ -1,5 +1,5 @@
 # application-dev.properties :essai
 server:
-  port : 8090
+  port : 9001
 app:
   message: development
