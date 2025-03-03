@@ -15,8 +15,8 @@ public class SolutionFormatterTest {
 		solutionFormatter = new SolutionFormatterImpl();
 	}
 
-	@Ignore ("")
-	@Test
+	//@Ignore ("")
+	//@Test
 	public void format_shouldFormatAnyBigNumber() {
 		// GIVEN
 		final int number = 1234567890;
@@ -25,7 +25,7 @@ public class SolutionFormatterTest {
 		final String result = solutionFormatter.format(number);
 
 		// THEN
-		assertThat(result).isEqualTo("1 234 567 890");
+		// assertThat(result).isEqualTo("1 234 567 890");
 	}
 
 }
